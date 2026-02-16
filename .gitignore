@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# Datos y Modelos (No subir archivos grandes)
+datos_originales/*.txt
+datos_aumentados/*.txt
+modelos_guardados/*.pth
+resultados/*.png
+
+# IDEs
+.vscode/
+.idea/
