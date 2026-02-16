@@ -41,14 +41,14 @@ class SignalPredictor:
         else:
             self.device = torch.device(device)
         
-        print(f"🖥️  Dispositivo seleccionado: {self.device}")
+        print(f"Dispositivo seleccionado: {self.device}")
         
         # Cargar checkpoint
         self._load_checkpoint()
     
     def _load_checkpoint(self):
         """Carga el modelo y sus metadatos"""
-        print(f"\n📂 Cargando modelo desde: {self.checkpoint_path}")
+        print(f"\nCargando modelo desde: {self.checkpoint_path}")
         
         checkpoint = torch.load(
             self.checkpoint_path,
@@ -82,7 +82,7 @@ class SignalPredictor:
         # Mostrar métricas del modelo si están disponibles
         if 'final_metrics' in checkpoint:
             metrics = checkpoint['final_metrics']
-            print("\n📊 Métricas del modelo:")
+            print("\nMétricas del modelo:")
             for key, value in metrics.items():
                 if isinstance(value, (int, float)):
                     if 'Parameters' in key:
@@ -107,7 +107,7 @@ class SignalPredictor:
         """
         # Validar coordenadas
         if not self._validate_coordinates(coordinates):
-            print("⚠ Advertencia: Coordenadas fuera del rango de entrenamiento")
+            print("Advertencia: Coordenadas fuera del rango de entrenamiento")
         
         # Preparar tensor de entrada
         coords_tensor = torch.tensor(
@@ -187,7 +187,7 @@ class SignalPredictor:
             test_data: Diccionario con datos reales
             n_samples: Número de muestras a evaluar
         """
-        print(f"\n📊 Evaluando modelo en {n_samples} muestras reales...")
+        print(f"\nEvaluando modelo en {n_samples} muestras reales...")
         
         coords_list = list(test_data.keys())[:n_samples]
         errors = []
@@ -221,7 +221,7 @@ def main():
     model_path = Path(paths.models_dir) / model_params.checkpoint_name
     
     # Cargar datos originales para comparación
-    print("\n📂 Cargando datos de referencia...")
+    print("\nCargando datos de referencia...")
     reference_data = load_spatial_data(paths.raw_data_dir)
     
     # Inicializar predictor
@@ -263,7 +263,7 @@ def main():
     predictor.evaluate_on_real_data(reference_data, n_samples=5)
     print("=" * 70)
     
-    print("\n✅ Proceso de inferencia completado\n")
+    print("\nProceso de inferencia completado\n")
 
 
 if __name__ == "__main__":
