@@ -9,7 +9,7 @@ env/
 .env
 
 # Datos y Modelos (No subir archivos grandes)
-datos_originales/*.txt
+datos_entrenamiento/*.txt
 datos_aumentados/*.txt
 modelos_guardados/*.pth
 resultados/*.png
