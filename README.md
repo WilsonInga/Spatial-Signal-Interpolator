@@ -75,4 +75,3 @@ El módulo `visualizacion.py` permite generar comparativas directas entre la se�
 ## ✒️ Autor
 
 **Proyecto Grupal- Modelos y Simulacion**
-````
