@@ -307,10 +307,10 @@ def main():
     
     # Configurar dispositivo
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"\n🖥️  Usando dispositivo: {device}")
+    print(f"\nUsando dispositivo: {device}")
     
     # Cargar datos
-    print("\n📂 Cargando datos de entrenamiento...")
+    print("\nCargando datos de entrenamiento...")
     raw_data = load_spatial_data(paths.training_data_dir)
     
     # Preparar dataset
@@ -331,7 +331,7 @@ def main():
         generator=torch.Generator().manual_seed(42)
     )
     
-    print(f"\n📊 División de datos:")
+    print(f"\nDivisión de datos:")
     print(f"  - Entrenamiento: {len(train_dataset)} muestras")
     print(f"  - Validación: {len(val_dataset)} muestras")
     
@@ -375,7 +375,7 @@ def main():
     training_results = trainer.train()
     
     # Métricas finales
-    print("\n📈 Calculando métricas finales...")
+    print("\nCalculando métricas finales...")
     final_metrics = trainer.compute_final_metrics()
     
     print("\n" + "=" * 70)
@@ -417,7 +417,7 @@ def main():
     plot_path = Path(paths.results_dir) / "curvas_entrenamiento.png"
     trainer.metrics.plot_training_curves(str(plot_path))
     
-    print("\n✅ Proceso de entrenamiento completado exitosamente\n")
+    print("\nProceso de entrenamiento completado exitosamente\n")
 
 
 if __name__ == "__main__":
