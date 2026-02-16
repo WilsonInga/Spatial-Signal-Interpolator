@@ -30,9 +30,6 @@ Framework de Deep Learning diseñado para la reconstrucción y predicción de se
 ├── utilidades.py          # Herramientas de análisis y conversión
 └── visualizacion.py       # Gráficas comparativas y mapas de calor
 ```
-
-````
-
 ## 🚀 Instalación y Uso
 
 ### 1. Clonar y preparar entorno
